@@ -1,24 +1,197 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700");
-* {
-  box-sizing: border-box;
+html,body {
+  border-collapse: collapse;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  margin: 0;
-  background-color: #99ff99;
+
+/*
+  general settings for box-container of jumbotron
+*/
+.main-jumbotron {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 51, 51);
+  position: relative;
+}
+
+
+/*
+  general for 3 level of jumbotron
+*/
+.backgroundLevel1,
+.backgroundLevel2,
+.backgroundLevel3 {
+  background: transparent;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+  lastone level of background  > lever 1 <   text area
+*/
+.backgroundLevel1 .level1text {
+  margin-top: 17%;
+}
+.backgroundLevel1 .level1text p {
+  color: rgba(255,255,0,0.5);
+  padding: 0 80px;
+  font-size: 2em;
   text-align: center;
 }
-
-h1 {
-  margin-top: 100px;
-  margin-left: 130px;
-  padding: 20px;
-  width: 400px;
-  border-radius: 15px;
-  background-color: #006699;
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  color: #ffff00;
+.backgroundLevel2{
+  padding: 0 50px;
 }
+
+
+/*
+  animation of > background Level 1 <
+*/
+.backgroundLevel1 div {
+  border-radius: 6px 6px 6px 6px;
+  display: inline-block;
+  height: 14px;
+}
+.row1Left {
+  position: relative;
+  left: -30%;
+  width: 220%;
+  margin-top: 23px;
+}
+.row1Right {
+  position: relative;
+  left: 0%;
+  width: 220%;
+  margin-top: 23px;
+}
+.trait1level1 {
+  background-color: rgba(255,0,0,0.2);
+  width: 250px;
+  margin-right: 80px;
+}
+.trait2level1 {
+  background-color: rgba(45,45,210,0.2);
+  width: 70px;
+  margin-right: 30px;
+}
+.trait3level1 {
+  background-color: rgba(0,255,0,0.1);
+  width: 120px;
+  margin-right: 45px;
+}
+
+
+/*
+  animation of level 2
+*/
+.rowLeft {
+  position: relative;
+  left: -30%;
+  width: 220%;
+  margin-top: 30px;
+}
+.rowRight {
+  position: relative;
+  left: 0%;
+  width: 220%;
+  margin-top: 30px;
+}
+
+.backgroundLevel2 div {
+  border-radius: 8px 8px 8px 8px;
+  display: inline-block;
+  height: 20px;
+}
+.trait1 {
+  background-color: rgba(255,0,0,0.5);
+  width: 250px;
+  margin-right: 80px;
+}
+.trait2 {
+  background-color: rgba(45,45,210,0.5);
+  width: 70px;
+  margin-right: 30px;
+}
+.trait3 {
+  background-color: rgba(0,255,0,0.4);
+  width: 120px;
+  margin-right: 45px;
+}
+
+
+
+/*
+  surface of jumbotron > level 3 <  : h1 slogan, and paragraph
+*/
+.backgroundLevel3 {
+  padding-top: 30vh;
+  text-align: center;
+}
+.backgroundLevel3 h1 {
+  background-color: rgb(0, 51, 51);
+  border-radius: 2em 2em 2em 2em;
+  box-shadow: 
+  -12px -12px 24px rgb(0, 51, 51),
+  12px 12px 24px rgb(0, 51, 51),
+  -6px -6px 12px rgb(0, 51, 51),
+  6px 6px 12px rgb(0, 51, 51),
+  -3px -3px 6px rgb(0, 51, 51),
+  3px 3px 6px rgb(0, 51, 51),
+  -1px -1px 3px rgb(0, 51, 51),
+  1px 1px 3px rgb(0, 51, 51),
+  -1px -1px 3px rgb(0, 51, 51),
+  1px 1px 3px rgb(0, 51, 51);
+  color: #ff00ff;
+  display: inline;
+  font-size: 4em;
+  padding: 23px 52px;
+  margin-bottom: 50px;
+}
+.backgroundLevel3 p {
+  background-color: rgba(255,255,0,0.3);
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8em;
+  margin-top: 70px;
+  padding: 5px;
+}
+
+
+/*
+  general settings of animation for lever 1 and 2
+*/
+
+.row1 {animation: mooveHorizontalLeft 15s infinite cubic-bezier(0.5, 0.2, 0.3, 1.0);}
+.row2 {animation: mooveHorizontalLeft 20s infinite cubic-bezier(0.5, 0.2, 0.3, 1.0);}
+.row3 {animation: mooveHorizontalRight 28s infinite cubic-bezier(0.5, 0.2, 0.3, 1.0);}
+.row4 {animation: mooveHorizontalLeftFast 13s infinite cubic-bezier(0.5, 0.2, 0.3, 1.0);}
+.row5 {animation: mooveHorizontalRight 20s infinite cubic-bezier(0.5, 0.2, 0.3, 1.0);}
+.row6 {animation: mooveHorizontalLeft 15s infinite cubic-bezier(0.5, 0.2, 0.3, 1.0);}
+
+@keyframes mooveHorizontalLeft {
+  0% {transform: translateX(-30%);}
+  50% {transform: translateX(10%);}
+  100% {transform: translateX(-30%);}
+}
+@keyframes mooveHorizontalRight {
+  0% {transform: translateX(0%);}
+  50% {transform: translateX(-50%);}
+  100% {transform: translateX(0%);}
+}
+@keyframes mooveHorizontalLeftFast {
+  0% {transform: translateX(-40%);}
+  50% {transform: translateX(15%);}
+  100% {transform: translateX(-40%);}
+}
+
+
+
+
 
 /*# sourceMappingURL=style.css.map */
